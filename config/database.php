@@ -13,25 +13,25 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => env('MYSQL_HOST','127.0.0.1'),
     // 数据库名
-    'database'        => '',
+    'database'        => env('MYSQL_DATABASE',''),
     // 用户名
-    'username'        => 'root',
+    'username'        => env('MYSQL_USER','root'),
     // 密码
-    'password'        => '',
+    'password'        => env('MYSQL_PWD',''),
     // 端口
-    'hostport'        => '',
+    'hostport'        => env('MYSQL_PORT','3306'),
     // 连接dsn
     'dsn'             => '',
     // 数据库连接参数
     'params'          => [],
     // 数据库编码默认采用utf8
-    'charset'         => 'utf8',
+    'charset'         => 'utf8mb4',
     // 数据库表前缀
-    'prefix'          => '',
+    'prefix'          => env('MYSQL_PREFIX',''),
     // 数据库调试模式
-    'debug'           => true,
+    'debug'           => env('MYSQL_DEBUG',false),
     // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
     'deploy'          => 0,
     // 数据库读写是否分离 主从式有效
@@ -51,7 +51,7 @@ return [
     // 时间字段取出后的默认时间格式
     'datetime_format' => 'Y-m-d H:i:s',
     // 是否需要进行SQL性能分析
-    'sql_explain'     => false,
+    'sql_explain'     => env('MYSQL_SQL_EXPLAIN',false),
     // Builder类
     'builder'         => '',
     // Query类
