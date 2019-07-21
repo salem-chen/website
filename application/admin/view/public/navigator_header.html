@@ -2,12 +2,12 @@
     <div class="layui-logo">网站后台</div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
-        <li class="layui-nav-item"><a href="">控制台</a></li>
-        <li class="layui-nav-item"><a href="">面试管理</a></li>
-        <li class="layui-nav-item"><a href="">学习笔记</a></li>
-        <li class="layui-nav-item"><a href="">书籍管理</a></li>
-        <li class="layui-nav-item"><a href="">文章管理</a></li>
-        <li class="layui-nav-item"><a href="">系统管理</a></li>
+        {foreach $navigator as $key=>$vo}
+            <li class="layui-nav-item {if $vo['id'] == $pid}layui-this {/if}" >
+                <a href="{:url('index',['pid'=>$vo.id])}">{$vo.display_name}</a>
+            </li>
+        {/foreach}
+
         <!--
         <li class="layui-nav-item">
             <a href="javascript:;">其它系统</a>

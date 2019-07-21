@@ -2,7 +2,13 @@
     <div class="layui-side-scroll">
         <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
         <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-            <li class="layui-nav-item"><a href="">面试题</a></li>
+            {foreach $leftNavigator as $key=>$vo}
+                <li class="layui-nav-item {if $vo['id'] == $id}layui-this {/if}" >
+                    <a href="{:url('index',['pid'=>$pid,'id'=>$vo.id])}">{$vo.display_name}</a>
+                </li>
+            {/foreach}
         </ul>
+
+
     </div>
 </div>
